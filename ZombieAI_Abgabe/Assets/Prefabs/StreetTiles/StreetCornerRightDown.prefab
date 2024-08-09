@@ -1,0 +1,90 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &6476768629346487843
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4210626884081611227, guid: 96bc7020d046b66499548c8ddde8fc32,
+        type: 3}
+      propertyPath: m_Name
+      value: Street_Rechts
+      objectReference: {fileID: 0}
+    - target: {fileID: 6931945602411533756, guid: 96bc7020d046b66499548c8ddde8fc32,
+        type: 3}
+      propertyPath: m_Name
+      value: Street_Unten
+      objectReference: {fileID: 0}
+    - target: {fileID: 7010932615594316140, guid: 96bc7020d046b66499548c8ddde8fc32,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7010932615594316140, guid: 96bc7020d046b66499548c8ddde8fc32,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7010932615594316140, guid: 96bc7020d046b66499548c8ddde8fc32,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7010932615594316140, guid: 96bc7020d046b66499548c8ddde8fc32,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: -0.50008726
+      objectReference: {fileID: 0}
+    - target: {fileID: 7010932615594316140, guid: 96bc7020d046b66499548c8ddde8fc32,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.49991274
+      objectReference: {fileID: 0}
+    - target: {fileID: 7010932615594316140, guid: 96bc7020d046b66499548c8ddde8fc32,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.50008726
+      objectReference: {fileID: 0}
+    - target: {fileID: 7010932615594316140, guid: 96bc7020d046b66499548c8ddde8fc32,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.49991274
+      objectReference: {fileID: 0}
+    - target: {fileID: 7010932615594316140, guid: 96bc7020d046b66499548c8ddde8fc32,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -89.98
+      objectReference: {fileID: 0}
+    - target: {fileID: 7010932615594316140, guid: 96bc7020d046b66499548c8ddde8fc32,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 270
+      objectReference: {fileID: 0}
+    - target: {fileID: 7010932615594316140, guid: 96bc7020d046b66499548c8ddde8fc32,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7638112377275370454, guid: 96bc7020d046b66499548c8ddde8fc32,
+        type: 3}
+      propertyPath: m_Name
+      value: StreetCornerRightDown
+      objectReference: {fileID: 0}
+    - target: {fileID: 8170424169473455222, guid: 96bc7020d046b66499548c8ddde8fc32,
+        type: 3}
+      propertyPath: m_Name
+      value: Grass_Links
+      objectReference: {fileID: 0}
+    - target: {fileID: 8605953503605767189, guid: 96bc7020d046b66499548c8ddde8fc32,
+        type: 3}
+      propertyPath: m_Name
+      value: Grass_Oben
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 96bc7020d046b66499548c8ddde8fc32, type: 3}

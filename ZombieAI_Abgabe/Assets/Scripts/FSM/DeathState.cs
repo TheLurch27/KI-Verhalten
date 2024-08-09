@@ -7,6 +7,7 @@ public class DeathState : IZombieState
         Debug.Log("Entering Death State.");
         zombie.Animator.SetBool("isDead", true);
         zombie.StopMoving();
+        zombie.NavMeshAgent.enabled = false;
     }
 
     public void UpdateState(ZombieAI zombie)
@@ -14,4 +15,3 @@ public class DeathState : IZombieState
         
     }
 }
-

@@ -5,7 +5,6 @@ public class AttackState : IZombieState
     public void EnterState(ZombieAI zombie)
     {
         Debug.Log("Entering Attack State.");
-        zombie.Animator.SetTrigger("AttackTrigger");
         zombie.StopMoving();
     }
 

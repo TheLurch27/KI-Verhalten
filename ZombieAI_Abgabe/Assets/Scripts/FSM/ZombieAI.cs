@@ -4,10 +4,10 @@ using UnityEngine.AI;
 public class ZombieAI : MonoBehaviour
 {
     public float detectionRadius = 15f;
-    public float stopDistance = 1f; // Abstand vor dem Spieler
+    public float stopDistance = 1f;
     public float attackRange = 2f;
-    public int attackDamage = 10; // Schaden pro Angriff
-    public float attackCooldown = 1.0f; // Angriff alle 1 Sekunde
+    public int attackDamage = 10;
+    public float attackCooldown = 1.0f;
 
     private Animator _animator;
     private NavMeshAgent _navMeshAgent;
@@ -15,10 +15,11 @@ public class ZombieAI : MonoBehaviour
     private PlayerHealth playerHealth;
     private bool isPlayerInRange;
     private float lastAttackTime;
+    private bool isDead = false;
 
-    public Animator Animator => _animator;  // Öffentliche Eigenschaft
-    public NavMeshAgent NavMeshAgent => _navMeshAgent;  // Öffentliche Eigenschaft
-    public Transform Player => _player;  // Öffentliche Eigenschaft
+    public Animator Animator => _animator;
+    public NavMeshAgent NavMeshAgent => _navMeshAgent;
+    public Transform Player => _player;
 
     private IZombieState currentState;
 
@@ -37,6 +38,8 @@ public class ZombieAI : MonoBehaviour
 
     private void Update()
     {
+        if (isDead) return;
+
         currentState?.UpdateState(this);
 
         if (Vector3.Distance(transform.position, _player.position) <= detectionRadius)
@@ -44,7 +47,6 @@ public class ZombieAI : MonoBehaviour
             TransitionToState(new WalkState());
         }
 
-        // Überprüfen, ob der Spieler im Angriffsradius ist
         isPlayerInRange = Vector3.Distance(transform.position, _player.position) <= attackRange;
     }
 
@@ -56,7 +58,11 @@ public class ZombieAI : MonoBehaviour
 
     public void Die()
     {
-        TransitionToState(new DeathState());
+        if (!isDead)
+        {
+            isDead = true;
+            TransitionToState(new DeathState());
+        }
     }
 
     public bool IsPlayerInAttackRange()
@@ -94,32 +100,27 @@ public class ZombieAI : MonoBehaviour
         if (isPlayerInRange && Time.time > lastAttackTime + attackCooldown)
         {
             AnimatorStateInfo stateInfo = _animator.GetCurrentAnimatorStateInfo(0);
-            if (stateInfo.IsName("Attack"))  // Sicherstellen, dass der Zustand korrekt überprüft wird
+            if (stateInfo.IsName("Attack"))
             {
-                Debug.Log("Attacking player.");
                 playerHealth.TakeDamage(attackDamage);
                 lastAttackTime = Time.time;
             }
         }
     }
 
-    // Diese Methode wird von der Animation aufgerufen
     public void ApplyDamage()
     {
         if (isPlayerInRange)
         {
-            Debug.Log("Applying damage to player.");
             playerHealth.TakeDamage(attackDamage);
         }
     }
 
-    // Kollisionen verwalten
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            Debug.Log("Player collided with Zombie.");
-            // Hier können Sie zusätzliche Logik hinzufügen, wenn der Spieler mit dem Zombie kollidiert
+            
         }
     }
 }
